@@ -68,8 +68,9 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-9 col-lg-9">
-                            <a href="#"><img id="img{{image.id}}" src="{{image.image.url}}" class="fluid img-thumbnail" alt="Image" style="cursor:pointer"></a>
-
+                            <a href="{% url 'SingleImage' image.title %}" name="SingleImage">
+                                <img id="img{{image.id}}" src="{{image.image.url}}" class="fluid img-thumbnail" alt="Image" style="cursor:pointer">
+                            </a>
                         </div>
                         <div class="col-md-3">
                             <h4 class ="desc text-light">Location</h4>
@@ -85,7 +86,7 @@
                         </div>
                         <div>
                             <br>
-                            <p class="desc text-light" style="margin-left: 20px;">{{image.caption}}</p>
+                            <p class="desc text-light" style="margin-left: 20px; margin-right: 10px;">{{image.caption}}</p>
                         </div>
                     </div>
                     <button type="button" class="btn btn-brown btn-block">Copy Image URL To Clipboard</button>

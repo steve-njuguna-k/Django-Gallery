@@ -7,31 +7,56 @@
     </div>
 
     <!-- Landing Page -->
-    <div class="banner">
-        <div class="cover">
+    <div class="banner-2">
+        <div class="cover-2">
             <div class="container image">
-                <h2 id="category">Photography is the story I fail to put into words.</h2>
-                <form class="form" role="search" action="#">
-                    <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search by category" name="image_category">
-                    </div>
-                    <br>
-                    <small>Trending searches: fashion, travel, cars, people, technology, weather, houses, food</small>
-                    <p class="text-light">I don’t trust words. I trust pictures.</p>
-                    <a href="{% url 'AllImages' %}" name="AllImages" style="margin-bottom: 20px;">
-                        View All Pics
-                    </a>
-                </form>
+                <center>
+                    <h1 id="category" class="text-brown">Category: {{image.category}}</h1>
+                    <form class="form" role="search" action="#">
+                        <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search by category" name="image_category">
+                        </div>
+                        <br>
+                        <small class="text-light">Trending searches: fashion, travel, cars, people, technology, weather, houses, food</small>
+                    </form>
+                </center>
             </div>
         </div>
     </div>
 
     <!-- Main Section -->
     <div class="container-fluid main-section">
-        <h1 class="text-center py-3 text-light">Featured Images</h1>
+        <div class="row">
+            <div class="col-md-9 col-lg-9">
+                <a href="#">
+                    <img id="img{{image.id}}" src="{{image.image.url}}" class="fluid img-thumbnail" alt="Image" style="cursor:pointer">
+                </a>
+            </div>
+            <div class="col-md-3">
+                <h4 class ="desc text-light">Location</h4>
+                <p class="text-brown">{{image.location}}</p>
+                <h4 class ="desc text-light">Category</h4>
+                <p class="text-brown">{{image.category}}</p>
+                <h4 class ="desc text-light">Date Created</h4>
+                <p class="text-brown">{{image.date_created}}</p>
+                <h4 class ="desc text-light">Last Updated</h4>
+                <p class="text-brown">{{image.date_updated}}</p>
+                <h4 class ="desc text-light">Uploaded By</h4>
+                <p class="text-brown">{{image.author.first_name}} {{image.author.last_name}}</p>
+            </div>
+            <div>
+                <br>
+                <h1 class="desc text-brown" style="margin-left: 20px;">{{image.title}}</h1>
+                <p class="desc text-light" style="margin-left: 20px;">{{image.caption}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid main-section">
+        <h1 class="py-3 text-light">Others You Might Like</h1>
         <div class="row">
             {% if images %}
-            {% for image in images %}
+            {% for image in images|slice:":3" %}
             <div class="col-sm-4 mb-3 d-flex align-items-stretch">
                 <div class="content">
                     <a href="{{ image.id }}" data-toggle="modal" data-target="#exampleModal{{image.id}}" data-target="#staticBackdrop">
