@@ -48,31 +48,31 @@ a:hover{
 .navbar-dark .navbar-toggler {
   color: #c48f56 ;
   border-color: #c48f56 ;
-background-color: #c48f56 ;
+  background-color: #c48f56 ;
 }
 
 .btn-brown{
   background-color: #c48f56;
   color: #fff;
-  border-radius: 0px;
+  border-radius: 3px;
 }
 
 .btn-brown:hover{
   background-color: #c48f56 ;
   color: #fff;
-  border-radius: 0px;
+  border-radius: 3px;
 }
 
 .btn-brown-outline{
   border-color: #c48f56;
   color: #c48f56;
-  border-radius: 0px;
+  border-radius: 3px;
 }
 
 .btn-brown-outline:hover{
   border-color: #c48f56 ;
   color: #c48f56 ;
-  border-radius: 0px;
+  border-radius: 3px;
 }
 
 .link{
@@ -108,7 +108,6 @@ div.container.imageloc{
 .banner{
 background: url(../img/landing2.jpg) no-repeat 0px 0px;
 background-size:cover;
-background-position: ;
 -webkit-background-size: cover;
 -o-background-size: cover;
 -ms-background-size: cover;
@@ -181,9 +180,95 @@ input.form-control {
   border-radius: 0px;
   height: 40px;
   font-family: 'Font Awesome 5 Brands' !important;
+  border-radius: 3px;
 }
 
-.form-group{
-  width: 50%;
+.main-section{
+  margin-top: 50px;
 }
-/* End of Banner */
+
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Image Prperties */
+.container .title{
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content .content-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay{
+  opacity: 1;
+}
+
+.content-image{
+  width: 100%;
+}
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details{
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.content-details h3{
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.content-details p{
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.fadeIn-bottom{
+  top: 80%;
+}
