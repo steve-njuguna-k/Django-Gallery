@@ -1,14 +1,25 @@
 from django.contrib import admin
-from .models import ImagePost, Profile, County, Category
+from .models import Image, County, Category
+from import_export import resources
+from import_export.admin import ImportExportModelAdmin
 
 # Register your models here.
-admin.site.register(ImagePost) 
-admin.site.register(County) 
-admin.site.register(Category) 
+admin.site.register(Image) 
 
-class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('profile_image', 'bio', 'date_created', 'date_updated')
-    search_fields = []
-    readonly_fields=('date_created', 'date_updated')
+class CategoryResource(resources.ModelResource):
+    class Meta:
+        model = Category
+
+class CategoryImportExportModelAdmin(ImportExportModelAdmin):
+    resource_class = CategoryResource
     
-admin.site.register(Profile, ProfileAdmin)
+admin.site.register(Category, CategoryImportExportModelAdmin)
+
+class CountyResource(resources.ModelResource):
+    class Meta:
+        model = County
+
+class CountyImportExportModelAdmin(ImportExportModelAdmin):
+    resource_class = CountyResource
+    
+admin.site.register(County, CountyImportExportModelAdmin)
