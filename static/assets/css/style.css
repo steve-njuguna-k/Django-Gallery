@@ -112,20 +112,22 @@ background-size:cover;
 -o-background-size: cover;
 -ms-background-size: cover;
 -moz-background-size: cover;
-min-height: 400px;
+min-height: 500px;
+margin-top: 50px;
 }
 
 .banner-2{
+  background: url(../img/landing2.jpg) no-repeat 0px 0px;
   background-size:cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
   -ms-background-size: cover;
   -moz-background-size: cover;
-  min-height: 200px;
-  }
+  min-height: 280px;
+}
 
 .cover{
-  min-height: 450px;
+  min-height: 500px;
   width: inherit;
   background: rgba(0,0,0,0.8)
 }
@@ -137,7 +139,7 @@ min-height: 400px;
 }
 
 .cover-2{
-  min-height: 225px;
+  min-height: 280px;
   width: inherit;
   background: rgba(0,0,0,0.8)
 }
@@ -322,4 +324,35 @@ input.form-control {
 
 .text-brown{
   color: #d18a19;
+}
+
+.modal-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #000000;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff!important;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.close:hover {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff!important;
+  text-shadow: 0 1px 0 #fff;
 }
