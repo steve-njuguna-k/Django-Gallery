@@ -1,6 +1,6 @@
 body{
   background-color: #000;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 p{
@@ -10,13 +10,13 @@ p{
 a{
   font-size: 14px;
   text-decoration: none;
-  color: #c48f56;
+  color: #d18a19;
 }
 
 a:hover{
   font-size: 14px;
   text-decoration: none;
-  color: #c48f56;
+  color: #d18a19;
 }
 
 .navbar.navbar-dark .nav-item .nav-link { 
@@ -25,7 +25,7 @@ a:hover{
 } 
 
 .navbar.navbar-dark .nav-item .nav-link:hover { 
-  color: #c48f56 !important; 
+  color: #d18a19 !important; 
   background-color: #000000;
 }
 
@@ -46,32 +46,32 @@ a:hover{
 }
 
 .navbar-dark .navbar-toggler {
-  color: #c48f56 ;
-  border-color: #c48f56 ;
-  background-color: #c48f56 ;
+  color: #d18a19 ;
+  border-color: #d18a19 ;
+  background-color: #d18a19 ;
 }
 
 .btn-brown{
-  background-color: #c48f56;
+  background-color: #d18a19;
   color: #fff;
   border-radius: 3px;
 }
 
 .btn-brown:hover{
-  background-color: #c48f56 ;
+  background-color: #d18a19 ;
   color: #fff;
   border-radius: 3px;
 }
 
 .btn-brown-outline{
-  border-color: #c48f56;
-  color: #c48f56;
+  border-color: #d18a19;
+  color: #d18a19;
   border-radius: 3px;
 }
 
 .btn-brown-outline:hover{
-  border-color: #c48f56 ;
-  color: #c48f56 ;
+  border-color: #d18a19 ;
+  color: #d18a19 ;
   border-radius: 3px;
 }
 
@@ -83,7 +83,7 @@ a:hover{
 .link:hover{
   margin-left: 10px;
   margin-right: 10px;
-  color: #c48f56;
+  color: #d18a19;
 }
 
 /*--Banner--*/
@@ -115,6 +115,15 @@ background-size:cover;
 min-height: 400px;
 }
 
+.banner-2{
+  background-size:cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  -moz-background-size: cover;
+  min-height: 200px;
+  }
+
 .cover{
   min-height: 450px;
   width: inherit;
@@ -123,6 +132,12 @@ min-height: 400px;
 
 .cover-1{
   min-height: inherit;
+  width: inherit;
+  background: rgba(0,0,0,0.8)
+}
+
+.cover-2{
+  min-height: 225px;
   width: inherit;
   background: rgba(0,0,0,0.8)
 }
@@ -148,7 +163,7 @@ min-height: 250px;
 
 .banner a:hover {
   color: #fff;
-  background: #000;
+  background: #d18a19;
 }
 
 .banner h2 {
@@ -182,6 +197,22 @@ input.form-control {
   background-color: #202124;
   border-color: #202124;
   color: #ffffff;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff!important;
+  background-color: #202124!important;
+  background-clip: padding-box;
+  border: 1px solid #202124!important;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .main-section{
@@ -290,5 +321,5 @@ input.form-control {
 }
 
 .text-brown{
-  color: #c48f56;
+  color: #d18a19;
 }

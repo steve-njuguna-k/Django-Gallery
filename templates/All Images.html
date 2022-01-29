@@ -7,28 +7,25 @@
     </div>
 
     <!-- Landing Page -->
-    <div class="banner">
-        <div class="cover">
+    <div class="banner-2">
+        <div class="cover-2">
             <div class="container image">
-                <h2 id="category">Photography is the story I fail to put into words.</h2>
-                <form class="form" role="search" action="#">
-                    <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search by category" name="image_category">
-                    </div>
-                    <br>
-                    <small>Trending searches: fashion, travel, cars, people, technology, weather, houses, food</small>
-                    <p class="text-light">I don’t trust words. I trust pictures.</p>
-                    <a href="{% url 'AllImages' %}" name="AllImages">
-                        View All Pics
-                    </a>
-                </form>
+                <center>
+                    <h1 id="category" class="text-brown">All Images</h1>
+                    <form class="form" role="search" action="#">
+                        <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search by category" name="image_category">
+                        </div>
+                        <br>
+                        <small class="text-light">Trending searches: fashion, travel, cars, people, technology, weather, houses, food</small>
+                    </form>
+                </center>
             </div>
         </div>
     </div>
 
     <!-- Main Section -->
     <div class="container-fluid main-section">
-        <h1 class="text-center py-3 text-light">Featured Images</h1>
         <div class="row">
             {% if images %}
             {% for image in images %}

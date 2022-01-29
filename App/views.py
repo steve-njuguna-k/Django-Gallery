@@ -6,3 +6,7 @@ from .models import Image
 def Home(request):
     images = Image.objects.all()
     return render(request, 'Index.html', {'images':images})
+
+def AllImages(request):
+    images = Image.objects.all()
+    return render(request, 'All Images.html', {'images':images})
