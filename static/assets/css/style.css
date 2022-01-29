@@ -179,6 +179,9 @@ input.form-control {
   border-radius: 0px;
   height: 40px;
   border-radius: 3px;
+  background-color: #202124;
+  border-color: #202124;
+  color: #ffffff;
 }
 
 .main-section{
@@ -269,4 +272,23 @@ input.form-control {
 
 .fadeIn-bottom{
   top: 80%;
+}
+
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #000000;
+  background-clip: padding-box;
+  border: 1px solid #000000;
+  border-radius: 0.3rem;
+  outline: 0;
+}
+
+.text-brown{
+  color: #c48f56;
 }
