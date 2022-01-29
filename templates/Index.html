@@ -28,78 +28,20 @@
     <div class="container-fluid main-section">
         <h1 class="text-center py-3 text-light">Featured Images</h1>
         <div class="row">
+            {% for image in images %}
             <div class="col-sm-6 col-md-4 mb-3">
                 <div class="content">
-                    <a href="https://wallpaperaccess.com/full/6704676.jpg" target="_blank">
+                    <a href="{{ image.image.url }}" target="_blank">
                       <div class="content-overlay"></div>
-                      <img src="https://wallpaperaccess.com/full/6704676.jpg" class="fluid img-thumbnail">
+                      <img src="{{ image.image.url }}" class="fluid img-thumbnail">
                       <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
+                        <h3 class="content-title">{{ image.caption }}</h3>
+                        <p class="content-text">{{ image.category }}</p>
                       </div>
                     </a>
                 </div> 
             </div>
-            <div class="col-sm-6 col-md-4 mb-3">
-                <div class="content">
-                    <a href="https://wallpaperaccess.com/full/3444207.jpg" target="_blank">
-                      <div class="content-overlay"></div>
-                      <img src="https://wallpaperaccess.com/full/3444207.jpg" class="fluid img-thumbnail">
-                      <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                      </div>
-                    </a>
-                </div>    
-            </div>
-            <div class="col-sm-6 col-md-4 mb-3">
-                <div class="content">
-                    <a href="https://external-preview.redd.it/8OFOUnzpEj4o6diwYxFjcjLrvCUWjosB2eLlAj7EB9k.jpg?auto=webp&s=c3b3627da71fde5118186a7f2299ea25c26898f5" target="_blank">
-                      <div class="content-overlay"></div>
-                      <img src="https://external-preview.redd.it/8OFOUnzpEj4o6diwYxFjcjLrvCUWjosB2eLlAj7EB9k.jpg?auto=webp&s=c3b3627da71fde5118186a7f2299ea25c26898f5" class="fluid img-thumbnail">
-                      <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                      </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 mb-3">
-                <div class="content">
-                    <a href="https://wallpaperaccess.com/full/6704676.jpg" target="_blank">
-                      <div class="content-overlay"></div>
-                      <img src="https://wallpaperaccess.com/full/6704676.jpg" class="fluid img-thumbnail">
-                      <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                      </div>
-                    </a>
-                </div> 
-            </div>
-            <div class="col-sm-6 col-md-4 mb-3">
-                <div class="content">
-                    <a href="https://wallpaperaccess.com/full/3444207.jpg" target="_blank">
-                      <div class="content-overlay"></div>
-                      <img src="https://wallpaperaccess.com/full/3444207.jpg" class="fluid img-thumbnail">
-                      <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                      </div>
-                    </a>
-                </div>    
-            </div>
-            <div class="col-sm-6 col-md-4 mb-3">
-                <div class="content">
-                    <a href="https://external-preview.redd.it/8OFOUnzpEj4o6diwYxFjcjLrvCUWjosB2eLlAj7EB9k.jpg?auto=webp&s=c3b3627da71fde5118186a7f2299ea25c26898f5" target="_blank">
-                      <div class="content-overlay"></div>
-                      <img src="https://external-preview.redd.it/8OFOUnzpEj4o6diwYxFjcjLrvCUWjosB2eLlAj7EB9k.jpg?auto=webp&s=c3b3627da71fde5118186a7f2299ea25c26898f5" class="fluid img-thumbnail">
-                      <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">This is a title</h3>
-                        <p class="content-text">This is a short description</p>
-                      </div>
-                    </a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     

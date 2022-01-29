@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from django.urls import reverse
+from .models import Image
 
 # Create your views here.
 def Home(request):
-    return render(request, 'Index.html')
+    images = Image.objects.all()
+    return render(request, 'Index.html', {'images':images})
