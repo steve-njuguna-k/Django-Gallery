@@ -113,7 +113,6 @@ background-size:cover;
 -ms-background-size: cover;
 -moz-background-size: cover;
 min-height: 400px;
-margin-top: 60px;
 }
 
 .cover{
@@ -188,8 +187,8 @@ input.form-control {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #000;
-  border: 1px solid #000;
+  background-color: transparent;
+  border: 1px solid transparent;
   border-radius: 0.25rem;
   max-width: 100%;
   height: auto;

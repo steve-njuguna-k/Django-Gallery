@@ -30,15 +30,15 @@
         <div class="row">
             {% if images %}
             {% for image in images %}
-            <div class="col-sm-6 col-md-4 mb-3">
+            <div class="col-sm-4 mb-3 d-flex align-items-stretch">
                 <div class="content">
                     <a href="{{ image.image.url }}" target="_blank">
-                      <div class="content-overlay"></div>
-                      <img src="{{ image.image.url }}" class="fluid img-thumbnail">
-                      <div class="content-details fadeIn-bottom">
-                        <h3 class="content-title">{{ image.caption }}</h3>
-                        <p class="content-text">{{ image.category }}</p>
-                      </div>
+                        <div class="content-overlay"></div>
+                        <img src="{{ image.image.url }}" class="fluid img-thumbnail">
+                        <div class="content-details fadeIn-bottom">
+                            <h4 class="content-title">{{ image.title }}</h4>
+                            <p>{{ image.category }}</p>
+                        </div>
                     </a>
                 </div> 
             </div>
