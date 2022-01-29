@@ -1,6 +1,6 @@
 body{
-  background-color: #fafafa;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  font-family: "Montserrat", sans-serif;
 }
 
 p{
@@ -10,198 +10,180 @@ p{
 a{
   font-size: 14px;
   text-decoration: none;
-  color: #000000;
+  color: #c48f56;
 }
 
 a:hover{
   font-size: 14px;
   text-decoration: none;
-  color: #000000;
+  color: #c48f56;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+.navbar.navbar-dark .nav-item .nav-link { 
+  color: #ffffff!important; 
+  background-color: #000000;
+} 
 
-*,
-button,
-input,
-select,
-textarea {
-  font-family: 'Roboto', sans-serif;
+.navbar.navbar-dark .nav-item .nav-link:hover { 
+  color: #c48f56 !important; 
+  background-color: #000000;
 }
 
-/* Vars */
-:root {
-  --primary: hsl(0, 0%, 100%);
-  --secondary: hsl(0, 0%, 98%);
-  --border: hsl(0, 0%, 86%);
-
-  --story-border: hsl(0, 0%, 78%);
-  --img-border: hsla(0, 0%, 0%, 0.1);
-
-  --text-dark: hsl(0, 0%, 15%);
-  --text-light: hsl(0, 0%, 60%);
-
-  --like: hsl(355, 82%, 61%);
-  --link: hsl(204, 100%, 48%);
-
-  --header-height: 44px;
-  --nav-height: 44px;
-}
-:root.darkTheme {
-  --primary: hsl(0, 0%, 0%);
-  --secondary: hsl(0, 0%, 2%);
-  --border: hsl(0, 0%, 15%);
-
-  --story-border: hsl(0, 0%, 44%);
-  --img-border: hsla(0, 0%, 100%, 0.1);
-
-  --text-dark: hsl(0, 0%, 98%);
-  --text-light: hsl(0, 0%, 60%);
+.navbar {
+  background-color: #000000!important;
 }
 
-/* -------------------------------------------------- */
-
-svg {
-  display: block;
+.navbar-nav {
+  background-color: #000000;
 }
 
-img {
-  max-width: 100%;
+.navbar-brand {
+  background-color: #000000;
 }
 
-/* -------------------------------------------------- */
-
-/* Header Navbar */
-.header {
-  width: 100%;
-  height: var(--header-height);
-  background-color: var(--primary);
-
-  display: flex;
-  justify-content: center;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-.header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-
-  width: 100%;
-  height: 1px;
-  background-color: var(--border);
-}
-
-.header__content {
-  width: 100%;
-  max-width: 975px;
-
-  padding: 0 14px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__home {
+.navbar-nav{
   margin-top: 5px;
 }
-.header__theme-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-.header__theme-button-sun {
-  display: none;
-}
-.header__theme-button-moon {
-  display: unset;
-}
-:root.darkTheme .header__theme-button-sun {
-  display: unset;
-}
-:root.darkTheme .header__theme-button-moon {
-  display: none;
+
+.navbar-dark .navbar-toggler {
+  color: #c48f56 ;
+  border-color: #c48f56 ;
+background-color: #c48f56 ;
 }
 
-.header__search {
-  width: 216px;
-  height: 28px;
-
-  display: none;
-  align-items: center;
-  position: relative;
-}
-.header__search svg {
-  width: 12px;
-  height: 12px;
-
-  position: absolute;
-  left: 8px;
-}
-.header__search input {
-  width: 100%;
-  height: 100%;
-  background-color: var(--secondary);
-
-  padding: 4px 10px 4px 28px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  outline: none;
-
-  font-size: 12px;
-  font-weight: 300;
-  text-decoration: none;
-  color: var(--text-light);
-
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.header__search input:focus {
-  color: var(--text-dark);
+.btn-brown{
+  background-color: #c48f56;
+  color: #fff;
+  border-radius: 0px;
 }
 
-.header__buttons {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+.btn-brown:hover{
+  background-color: #c48f56 ;
+  color: #fff;
+  border-radius: 0px;
 }
 
-/* Bottom Navbar */
-.navbar {
-  width: 100%;
-  height: var(--nav-height);
-  background-color: var(--primary);
-
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-}
-.navbar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-
-  width: 100%;
-  height: 1px;
-  background-color: var(--border);
+.btn-brown-outline{
+  border-color: #c48f56;
+  color: #c48f56;
+  border-radius: 0px;
 }
 
-.navbar__button {
-  flex: 1 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.btn-brown-outline:hover{
+  border-color: #c48f56 ;
+  color: #c48f56 ;
+  border-radius: 0px;
 }
 
-.navbar__button.profile-button .profile-button__border {
-  width: 28px;
-  height: 28px;
-  border-width: 2px;
+.link{
+  margin-left: 10px;
+  margin-right: 10px;
 }
+
+.link:hover{
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #c48f56;
+}
+
+/*--Banner--*/
+div.container.image{
+  padding: 6em 0 0;
+}
+
+div.container.imageloc{
+  padding: 4em 0 0;
+}
+
+.banner h2{
+  padding-bottom: 20px;
+}
+
+.banner-1 h2{
+  color: #c3c3c3;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.banner{
+background: url(../img/landing2.jpg) no-repeat 0px 0px;
+background-size:cover;
+background-position: ;
+-webkit-background-size: cover;
+-o-background-size: cover;
+-ms-background-size: cover;
+-moz-background-size: cover;
+min-height: 400px;
+margin-top: 60px;
+}
+
+.cover{
+  min-height: 450px;
+  width: inherit;
+  background: rgba(0,0,0,0.8)
+}
+
+.cover-1{
+  min-height: inherit;
+  width: inherit;
+  background: rgba(0,0,0,0.8)
+}
+
+.banner-1{
+background: url(../img/landing2.jpg) no-repeat 0px 0px;
+background-size:cover;
+background-position: center;
+-webkit-background-size: cover;
+-o-background-size: cover;
+-ms-background-size: cover;
+-moz-background-size: cover;
+min-height: 250px;
+}
+
+.banner a {
+  font-size: 1em;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.8em 2em;
+  background:#d18a19;
+}
+
+.banner a:hover {
+  color: #fff;
+  background: #000;
+}
+
+.banner h2 {
+  font-size:2.5em;
+  font-weight: 600;
+  color: #fff;
+}
+
+.banner {
+  text-align: center;
+}
+
+.banner p {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.46);
+  font-weight: 400;
+  line-height: 1.8em;
+  margin: 3em auto 1em;
+  width: 70%;
+}
+
+small{
+  color: #ffffff;
+}
+
+input.form-control {
+  width: 50%;
+  border-radius: 0px;
+  height: 40px;
+  font-family: 'Font Awesome 5 Brands' !important;
+}
+
+.form-group{
+  width: 50%;
+}
+/* End of Banner */
