@@ -8,6 +8,7 @@ urlpatterns = [
     path('images/all', views.AllImages, name="AllImages"),
     path('image/<str:title>', views.SingleImage, name="SingleImage"),
     path('search', views.Search, name="Search"),
+    path('<int:id>/images', views.ImagesInCategory, name="ImagesInCategory"),
 ]
 
 if settings.DEBUG:

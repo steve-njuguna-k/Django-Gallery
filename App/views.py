@@ -27,3 +27,7 @@ def Search(request):
         return render(request, 'Search Results.html', {'search':search, 'images':images, 'categories':categories})
     else:
         return render(request, 'Search Results.html')
+
+def ImagesInCategory(request, id):
+    images = Image.objects.filter(category=id).all()
+    return render(request, 'Category Images.html', {'images':images})
