@@ -7,6 +7,21 @@ class Category(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='Date Created')
     date_updated = models.DateTimeField(auto_now=True, verbose_name='Date Updated')
 
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()
+
+    def update_category(self, update):
+        self.name = update
+        self.save()
+
+    @classmethod
+    def get_category_id(cls, id):
+        category = Category.objects.get(pk = id)
+        return category
+
     def __str__(self):
         return self.name
 
