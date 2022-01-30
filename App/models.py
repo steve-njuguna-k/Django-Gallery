@@ -28,7 +28,7 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
-class County(models.Model):
+class Location(models.Model):
     name = models.CharField(max_length=50, verbose_name='Name', null=False)
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='Date Created')
     date_updated = models.DateTimeField(auto_now=True, verbose_name='Date Updated')
@@ -45,7 +45,7 @@ class County(models.Model):
 
     @classmethod
     def get_location_id(cls, id):
-        locate = County.objects.get(pk = id)
+        locate = Location.objects.get(pk = id)
         return locate
 
     def __str__(self):
@@ -60,7 +60,7 @@ class Image(models.Model):
     caption = models.CharField(max_length=2200, verbose_name='Caption', null=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Author')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Category')
-    location = models.ForeignKey(County, on_delete=models.CASCADE, verbose_name='Location')
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, verbose_name='Location')
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='Date Created')
     date_updated = models.DateTimeField(auto_now=True, verbose_name='Date Updated')
 

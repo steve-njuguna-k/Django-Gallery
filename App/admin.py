@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Image, County, Category
+from .models import Image, Location, Category
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
@@ -15,11 +15,11 @@ class CategoryImportExportModelAdmin(ImportExportModelAdmin):
     
 admin.site.register(Category, CategoryImportExportModelAdmin)
 
-class CountyResource(resources.ModelResource):
+class LocationResource(resources.ModelResource):
     class Meta:
-        model = County
+        model = Location
 
-class CountyImportExportModelAdmin(ImportExportModelAdmin):
-    resource_class = CountyResource
+class LocationImportExportModelAdmin(ImportExportModelAdmin):
+    resource_class = LocationResource
     
-admin.site.register(County, CountyImportExportModelAdmin)
+admin.site.register(Location, LocationImportExportModelAdmin)

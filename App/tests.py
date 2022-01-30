@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Image, Category, County
+from .models import Image, Category, Location
 from django.contrib.auth.models import User
 
 user = User.objects.get(id=1)
@@ -8,27 +8,27 @@ user = User.objects.get(id=1)
 class LocationTestCLass(TestCase):
     #Set up Method
     def setUp(self):
-        self.loc = County(name="Kenya")
+        self.loc = Location(name="Kenya")
         self.loc.save_location()
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.loc,County))
+        self.assertTrue(isinstance(self.loc,Location))
 
     def test_save_method(self):
         self.loc.save_location()
-        locations = County.objects.all()
+        locations = Location.objects.all()
         self.assertTrue(len(locations) > 0)
 
     def test_delete_method(self):
         self.loc.save_location()
         self.loc.delete_location()
-        location = County.objects.all()
+        location = Location.objects.all()
         self.assertTrue(len(location) == 0)
 
     def test_update(self):
-        location = County.get_location_id(self.loc.id)
+        location = Location.get_location_id(self.loc.id)
         location.update_location('Tanzania')
-        location = County.get_location_id(self.loc.id)
+        location = Location.get_location_id(self.loc.id)
         self.assertTrue(location.name == 'Tanzania')
 
 class CategoryTestClass(TestCase):
@@ -63,7 +63,7 @@ class ImageTestClass(TestCase):
         self.cat = Category(name="Fashion")
         self.cat.save_category()
 
-        self.loc = County(name="Kenya")
+        self.loc = Location(name="Kenya")
         self.loc.save_location()
 
         self.image = Image(title='image test', caption='my test', author=user, category=self.cat, location=self.loc)
