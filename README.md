@@ -1,4 +1,4 @@
-# Django-Gallery
+# Django Photo Gallery (Pikcha Planet)
 A Django application for a personal gallery that allows a user to upload images for other to see and be able to to share by coping the image link. Images are hosted on Cloudinary.
 
 ![](https://github.com/steve-njuguna-k/Django-Gallery/blob/master/Screenshot.PNG)
