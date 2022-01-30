@@ -159,13 +159,10 @@ min-height: 250px;
   font-size: 1em;
   color: #fff;
   font-weight: 600;
-  padding: 0.8em 2em;
-  background:#d18a19;
 }
 
 .banner a:hover {
   color: #fff;
-  background: #d18a19;
 }
 
 .banner h2 {
@@ -383,4 +380,10 @@ input.form-control {
   border: 1px solid #d18a19;
   color: #ffffff;
   border-radius: 0.25rem;
+}
+
+.badge{
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 5px;
 }

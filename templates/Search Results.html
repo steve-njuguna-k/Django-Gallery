@@ -19,7 +19,7 @@
                                 <input type="text" class="form-control" placeholder="Search For Images & Categories" name="imageSearch">
                             </div>
                             <br>
-                            <small class="text-light">Trending searches: fashion, travel, cars, people, technology, weather, houses, food</small>
+                            <small>Trending searches: {% for category in trendingcategories %} <a class="trending-links" href="{% url 'ImagesInCategory' category.id %}"> <span class="badge badge badge-light">{{ category.name }}</span> </a> {% endfor %}</p>
                         </form>
                     </center>
                 </div>
