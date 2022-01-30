@@ -358,6 +358,10 @@ input.form-control {
   color: #000000;
 }
 
+.swal-text {
+  text-align: center;
+}
+
 .swal-button {
   padding: 7px 19px;
   border-radius: 2px;
