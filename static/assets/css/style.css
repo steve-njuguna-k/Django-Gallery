@@ -356,3 +356,16 @@ input.form-control {
   color: #ffffff!important;
   text-shadow: 0 1px 0 #fff;
 }
+
+.swal-title {
+  color: #000000;
+}
+
+.swal-button {
+  padding: 7px 19px;
+  border-radius: 2px;
+  background-color: #d18a19;
+  color: #ffffff;
+  font-size: 12px;
+  border: 1px solid #d18a19;
+}

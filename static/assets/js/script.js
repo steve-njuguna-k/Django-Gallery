@@ -10,5 +10,7 @@ function copyToClipboard() {
     navigator.clipboard.writeText(copyText.value);
   
     /* Alert the copied text */
-    alert("URL Successfully Copied: " + copyText.value);
+    swal("URL Successfully Copied!", copyText.value, "success", {
+        button: "Done",
+    });
 }
