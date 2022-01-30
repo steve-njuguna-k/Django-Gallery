@@ -387,3 +387,11 @@ input.form-control {
   margin-right: 2px;
   padding: 5px;
 }
+
+.all-pics{
+  background-color: #d18a19;
+  color: #ffffff!important;
+  padding: 10px;
+  max-width: 15%;
+  border-radius: 8px;
+}

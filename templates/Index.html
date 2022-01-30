@@ -20,7 +20,7 @@
                     <small>Trending searches: {% for category in trendingcategories %} <a class="trending-links" href="{% url 'ImagesInCategory' category.id %}"> <span class="badge badge badge-light">{{ category.name }}</span> </a> {% endfor %}</p>
                     <p class="text-light">I don’t trust words. I trust pictures.</p>
                     <a href="{% url 'AllImages' %}" name="AllImages" style="margin-bottom: 20px;">
-                        <button class="btn btn-brown btn-md">View All Pics</button>
+                        <p class="all-pics">View All Pics</p>
                     </a>
                 </form>
             </div>
