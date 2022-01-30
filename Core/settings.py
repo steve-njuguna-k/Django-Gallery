@@ -14,6 +14,15 @@ import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
 from dotenv import load_dotenv, find_dotenv
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config( 
+  cloud_name = os.environ.get('CLOUD_NAME'), 
+  api_key = os.environ.get('API_KEY'), 
+  api_secret = os.environ.get('API_SECRET')
+)
 
 load_dotenv(find_dotenv())
 
@@ -42,6 +51,7 @@ INSTALLED_APPS = [
 
     'App',
     'import_export',
+    'cloudinary',
     'django_cleanup.apps.CleanupConfig',
 ]
 
@@ -80,23 +90,23 @@ WSGI_APPLICATION = 'Core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#       'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get('NAME'),
-#         'USER': os.environ.get('USER'),
-#         'PASSWORD': os.environ.get('PASSWORD'),
-#         'HOST': os.environ.get('HOST'),
-#         'PORT': '5432',
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+      'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('NAME'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD'),
+        'HOST': os.environ.get('HOST'),
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
