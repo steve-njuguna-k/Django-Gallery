@@ -18,6 +18,21 @@ class County(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='Date Created')
     date_updated = models.DateTimeField(auto_now=True, verbose_name='Date Updated')
 
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()
+
+    def update_location(self, update):
+        self.name = update
+        self.save()
+
+    @classmethod
+    def get_location_id(cls, id):
+        locate = County.objects.get(pk = id)
+        return locate
+
     def __str__(self):
         return self.name
 
