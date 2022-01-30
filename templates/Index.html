@@ -11,9 +11,10 @@
         <div class="cover">
             <div class="container image">
                 <h2 id="category">Photography is the story I fail to put into words.</h2>
-                <form class="form" role="search" action="#">
+                <form class="form" role="search" method="POST" action="{% url 'Search' %}" name="Search">
+                    {% csrf_token %}
                     <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search by category" name="image_category">
+                    <input type="text" class="form-control" placeholder="Search Images" name="imageSearch">
                     </div>
                     <br>
                     <small>Trending searches: fashion, travel, cars, people, technology, weather, houses, food</small>

@@ -1,0 +1,166 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% include 'Navbar.html' %}
+    </div>
+
+    <!-- Landing Page -->
+    {% if search %}
+        <div class="banner-2">
+            <div class="cover-2">
+                <div class="container image">
+                    <center>
+                        <h1 id="category" class="text-brown">Your Searched For <span class="text-light">'{{ search }}'</span></h1>
+                        <form class="form" role="search" method="POST" action="{% url 'Search' %}" name="Search">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search Images" name="imageSearch">
+                            </div>
+                            <br>
+                            <small class="text-light">Trending searches: fashion, travel, cars, people, technology, weather, houses, food</small>
+                        </form>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Section -->
+        <div class="container-fluid main-section">
+            <div class="row">
+                {% if images %}
+                {% for image in images %}
+                <div class="col-sm-4 mb-3 d-flex align-items-stretch">
+                    <div class="content">
+                        <a href="{{ image.id }}" data-toggle="modal" data-target="#exampleModal{{image.id}}" data-target="#staticBackdrop">
+                            <div class="content-overlay"></div>
+                            <img src="{{ image.image.url }}" class="fluid img-thumbnail">
+                            <div class="content-details fadeIn-bottom">
+                                <h4 class="content-title">{{ image.title }}</h4>
+                                <p>{{ image.category }}</p>
+                            </div>
+                        </a>
+                    </div> 
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="col-sm-12" style="margin-top: 20px;">
+                    <div class="content text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgba(209, 138, 25, 1);transform: ;msFilter:;"><path d="M20 2H8c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM8 16V4h12l.002 12H8z"></path><path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"></path><path d="m12 12-1-1-2 3h10l-4-6z"></path></svg>
+                        <br>
+                        <h4 class="text-light py-3">No Associated Images Founds</h4>
+                    </div> 
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <div class="banner-2">
+            <div class="cover-2">
+                <div class="container image">
+                    <center>
+                        <h1 id="category" class="text-brown">You Need To Search For An Image Title</h1>
+                        <form class="form" role="search" method="POST" action="{% url 'Search' %}" name="Search">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search Images" name="imageSearch">
+                            </div>
+                            <br>
+                            <small class="text-light">Trending searches: fashion, travel, cars, people, technology, weather, houses, food</small>
+                        </form>
+                    </center>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Section -->
+        <div class="container-fluid main-section">
+            <div class="row">
+                {% if images %}
+                {% for image in images %}
+                <div class="col-sm-4 mb-3 d-flex align-items-stretch">
+                    <div class="content">
+                        <a href="{{ image.id }}" data-toggle="modal" data-target="#exampleModal{{image.id}}" data-target="#staticBackdrop">
+                            <div class="content-overlay"></div>
+                            <img src="{{ image.image.url }}" class="fluid img-thumbnail">
+                            <div class="content-details fadeIn-bottom">
+                                <h4 class="content-title">{{ image.title }}</h4>
+                                <p>{{ image.category }}</p>
+                            </div>
+                        </a>
+                    </div> 
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="col-sm-12" style="margin-top: 20px;">
+                    <div class="content text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgba(209, 138, 25, 1);transform: ;msFilter:;"><path d="M20 2H8c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM8 16V4h12l.002 12H8z"></path><path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"></path><path d="m12 12-1-1-2 3h10l-4-6z"></path></svg>
+                        <br>
+                        <h4 class="text-light py-3">No Associated Images Founds</h4>
+                    </div> 
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    <!-- Modal -->
+    {% for image in images %}
+    <div class="modal fade" id="exampleModal{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="desc text-brown" style="margin-left: 20px;">{{image.title}}</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-9">
+                            <a href="{% url 'SingleImage' image.title %}" name="SingleImage">
+                                <img id="img{{image.id}}" src="{{image.image.url}}" class="fluid img-thumbnail" alt="Image" style="cursor:pointer">
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 class ="desc text-light">Location</h4>
+                            <p class="text-brown">{{image.location}}</p>
+                            <h4 class ="desc text-light">Category</h4>
+                            <p class="text-brown">{{image.category}}</p>
+                            <h4 class ="desc text-light">Date Created</h4>
+                            <p class="text-brown">{{image.date_created}}</p>
+                            <h4 class ="desc text-light">Last Updated</h4>
+                            <p class="text-brown">{{image.date_updated}}</p>
+                            <h4 class ="desc text-light">Uploaded By</h4>
+                            <p class="text-brown">{{image.author.first_name}} {{image.author.last_name}}</p>
+                        </div>
+                        <div>
+                            <br>
+                            <p class="desc text-light" style="margin-left: 20px; margin-right: 10px;">{{image.caption}}</p>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="url" value="{{ image.image.url }}" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-brown" type="button" onclick="copyToClipboard()">Copy Image URL To Clipboard</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-dark btn-block" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 text-light">
+            © Copyright 2022 <span class="text-brown">Pikcha Planet</span>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    
+{% endblock %}
