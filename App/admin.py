@@ -4,7 +4,14 @@ from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
 # Register your models here.
-admin.site.register(Image) 
+class ImageResource(resources.ModelResource):
+    class Meta:
+        model = Image
+
+class ImageImportExportModelAdmin(ImportExportModelAdmin):
+    resource_class = ImageResource
+    
+admin.site.register(Image, ImageImportExportModelAdmin)
 
 class CategoryResource(resources.ModelResource):
     class Meta:
