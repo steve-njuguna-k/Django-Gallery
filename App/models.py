@@ -64,21 +64,15 @@ class Image(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='Date Created')
     date_updated = models.DateTimeField(auto_now=True, verbose_name='Date Updated')
 
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = 'Images'
-
     def save_image(self):
         self.save()
 
     def delete_image(self):
         self.delete()
-    
+
     @classmethod
-    def update_image(cls, id ,image, title , caption, author, category, location):
-        update = cls.objects.filter(id = id).update(image = image, title = title ,caption = caption,author = author, category = category, location = location)
+    def update_image(cls, id, title, caption, author, category, location):
+        update = cls.objects.filter(id = id).update(title = title , caption = caption, author = author, category = category, location = location)
         return update
 
     @classmethod
@@ -88,15 +82,21 @@ class Image(models.Model):
 
     @classmethod
     def get_image_by_id(cls,id):
-        image = cls.objects.filter(id=id).all()
+        image = cls.objects.filter(id= id).all()
         return image
 
     @classmethod
     def search_by_category(cls,category):
-        images = Image.objects.filter(category=category)
+        images = Image.objects.filter(category__name__icontains=category)
         return images
 
     @classmethod
     def filter_by_location(cls, location):
-        images_location = cls.objects.filter(location=location)
+        images_location = cls.objects.filter(location__id=location)
         return images_location
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Images'
