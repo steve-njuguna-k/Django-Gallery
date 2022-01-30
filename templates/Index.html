@@ -32,7 +32,7 @@
         <h1 class="text-center py-3 text-light">Featured Images</h1>
         <div class="row">
             {% if images %}
-            {% for image in images %}
+            {% for image in images|slice:":9" %}
             <div class="col-sm-4 mb-3 d-flex align-items-stretch">
                 <div class="content">
                     <a href="{{ image.id }}" data-toggle="modal" data-target="#exampleModal{{image.id}}" data-target="#staticBackdrop">

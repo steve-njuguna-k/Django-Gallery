@@ -22,7 +22,7 @@ class County(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Counties'
+        verbose_name_plural = 'Locations'
 
 class Image(models.Model):
     image = models.ImageField(upload_to='uploads', verbose_name='Image', null=False)
@@ -30,7 +30,7 @@ class Image(models.Model):
     caption = models.CharField(max_length=2200, verbose_name='Caption', null=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Author')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Category')
-    location = models.ForeignKey(County, on_delete=models.CASCADE, verbose_name='County')
+    location = models.ForeignKey(County, on_delete=models.CASCADE, verbose_name='Location')
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='Date Created')
     date_updated = models.DateTimeField(auto_now=True, verbose_name='Date Updated')
 
