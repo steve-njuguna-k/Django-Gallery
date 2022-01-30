@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from .models import Category, Image
@@ -12,6 +13,10 @@ def Home(request):
 def AllImages(request):
     images = Image.objects.all()
     return render(request, 'All Images.html', {'images':images})
+
+def AllCategories(request):
+    categories = Category.objects.all()
+    return render(request, 'Categories.html', {'categories':categories})
 
 def SingleImage(request, title):
     items = list(Image.objects.all())
@@ -29,5 +34,6 @@ def Search(request):
         return render(request, 'Search Results.html')
 
 def ImagesInCategory(request, id):
+    category = Category.objects.get(id=id)
     images = Image.objects.filter(category=id).all()
-    return render(request, 'Category Images.html', {'images':images})
+    return render(request, 'Category Images.html', {'images':images, 'category':category})

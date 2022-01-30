@@ -7,12 +7,11 @@
     </div>
 
     <!-- Landing Page -->
-    {% if search %}
         <div class="banner-2">
             <div class="cover-2">
                 <div class="container image">
                     <center>
-                        <h1 id="category" class="text-brown">Your Searched For <span class="text-light">'{{ search }}'</span></h1>
+                        <h1 id="category" class="text-brown">All Categories</span></h1>
                         <form class="form" role="search" method="POST" action="{% url 'Search' %}" name="Search">
                             {% csrf_token %}
                             <div class="input-group">
@@ -29,30 +28,13 @@
         <!-- Main Section -->
         <div class="container-fluid main-section">
             <div class="row">
-                {% if images %}
-                    {% for image in images %}
-                    <div class="col-sm-4 mb-3 d-flex align-items-stretch">
-                        <div class="content">
-                            <a href="{{ image.id }}" data-toggle="modal" data-target="#exampleModal{{image.id}}" data-target="#staticBackdrop">
-                                <div class="content-overlay"></div>
-                                <img src="{{ image.image.url }}" class="fluid img-thumbnail">
-                                <div class="content-details fadeIn-bottom">
-                                    <h4 class="content-title">{{ image.title }}</h4>
-                                    <p>{{ image.category }}</p>
-                                </div>
-                            </a>
-                        </div> 
-                    </div>
-                    {% endfor %}
-                {% elif categories %}
+                {% if categories %}
                     {% for category in categories %}
-                    <div class="col-sm-4" style="margin-bottom: 20px;">
-                        
-                    </div>
                     <div class="col-sm-4" style="margin-bottom: 20px;">
                         <div class="card text-center h-100">
                             <div class="card-body">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M20 2H8c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM8 16V4h12l.002 12H8z"></path><path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"></path><path d="m12 12-1-1-2 3h10l-4-6z"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M20 2H8c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM8 16V4h12l.002 12H8z"></path><path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"></path><path d="m12 12-1-1-2 3h10l-4-6z"></path></svg>
+                                <br>
                                 <h3 class="card-title">{{ category }}</h3>
                                 <h6 class="card-subtitle mb-2 text-muted">Category</h6>
                                 <p class="card-text">This is a collection of all images in {{ category }} category</p>
@@ -60,70 +42,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4" style="margin-bottom: 20px;">
-                        
-                    </div>
                     {% endfor %}
                 {% else %}
                 <div class="col-sm-12" style="margin-top: 20px;">
                     <div class="content text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgba(209, 138, 25, 1);transform: ;msFilter:;"><path d="M20 2H8c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM8 16V4h12l.002 12H8z"></path><path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"></path><path d="m12 12-1-1-2 3h10l-4-6z"></path></svg>
                         <br>
-                        <h4 class="text-light py-3">No Associated Category or Images Found</h4>
+                        <h4 class="text-light py-3">No Categories Found</h4>
                     </div> 
                 </div>
                 {% endif %}
             </div>
         </div>
-    {% else %}
-        <div class="banner-2">
-            <div class="cover-2">
-                <div class="container image">
-                    <center>
-                        <h1 id="category" class="text-brown">You Need To Search For An Image Title</h1>
-                        <form class="form" role="search" method="POST" action="{% url 'Search' %}" name="Search">
-                            {% csrf_token %}
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Images" name="imageSearch">
-                            </div>
-                            <br>
-                            <small class="text-light">Trending searches: fashion, travel, cars, people, technology, weather, houses, food</small>
-                        </form>
-                    </center>
-                </div>
-            </div>
-        </div>
-
-        <!-- Main Section -->
-        <div class="container-fluid main-section">
-            <div class="row">
-                {% if images %}
-                {% for image in images %}
-                <div class="col-sm-4 mb-3 d-flex align-items-stretch">
-                    <div class="content">
-                        <a href="{{ image.id }}" data-toggle="modal" data-target="#exampleModal{{image.id}}" data-target="#staticBackdrop">
-                            <div class="content-overlay"></div>
-                            <img src="{{ image.image.url }}" class="fluid img-thumbnail">
-                            <div class="content-details fadeIn-bottom">
-                                <h4 class="content-title">{{ image.title }}</h4>
-                                <p>{{ image.category }}</p>
-                            </div>
-                        </a>
-                    </div> 
-                </div>
-                {% endfor %}
-                {% else %}
-                <div class="col-sm-12" style="margin-top: 20px;">
-                    <div class="content text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" style="fill: rgba(209, 138, 25, 1);transform: ;msFilter:;"><path d="M20 2H8c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM8 16V4h12l.002 12H8z"></path><path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"></path><path d="m12 12-1-1-2 3h10l-4-6z"></path></svg>
-                        <br>
-                        <h4 class="text-light py-3">No Associated Images Founds</h4>
-                    </div> 
-                </div>
-                {% endif %}
-            </div>
-        </div>
-    {% endif %}
 
     <!-- Modal -->
     {% for image in images %}
