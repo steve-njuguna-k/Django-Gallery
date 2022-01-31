@@ -7,5 +7,7 @@ function copyToClipboard(value){
         document.addEventListener('copy', handler, true);
         document.execCommand('copy');
 
-    alert("URL Successfully Copied!");
+    swal("URL Successfully Copied!", value, "success", {
+        button: "Done",
+    });
 }
