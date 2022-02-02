@@ -37,8 +37,8 @@ def Search(request):
     trendingcategories = random.sample(trending, 15)
     if request.method == 'POST':
         search = request.POST['imageSearch']
-        images = Image.objects.filter(title__contains = search).all()
-        categories = Category.objects.filter(name__contains = search).all()
+        images = Image.objects.filter(title__icontains = search).all()
+        categories = Category.objects.filter(name__icontains = search).all()
         return render(request, 'Search Results.html', {'search':search, 'images':images, 'categories':categories, 'trendingcategories':trendingcategories})
     else:
         return render(request, 'Search Results.html', {'trendingcategories':trendingcategories})
